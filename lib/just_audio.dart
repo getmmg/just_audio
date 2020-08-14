@@ -1016,8 +1016,9 @@ class _ProxyHttpServer {
             // Rewrite headers
             final headers = <String, String>{};
             request.headers.forEach((name, value) {
+              String headerName = name;
               if (name.toLowerCase() != 'host') {
-                headers[name] = value.join(",");
+                headers[headerName] = value.join(",");
               }
             });
             for (var name in proxyRequest.headers.keys) {
